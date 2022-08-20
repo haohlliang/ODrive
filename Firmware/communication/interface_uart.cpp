@@ -84,6 +84,8 @@ static void uart_server_thread(void * ctx) {
             ASCII_protocol_parse_stream(dma_rx_buffer + dma_last_rcv_idx,
                     UART_RX_BUFFER_SIZE - dma_last_rcv_idx, uart4_stream_output);
             dma_last_rcv_idx = 0;
+            //修改  增加USART标签
+            //Usart_Flag =1;
         }
         if (new_rcv_idx > dma_last_rcv_idx) {
             uart4_stream_input.process_bytes(dma_rx_buffer + dma_last_rcv_idx,

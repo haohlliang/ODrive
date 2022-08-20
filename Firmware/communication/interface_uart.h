@@ -3,6 +3,9 @@
 
 #ifdef __cplusplus
 #include "fibre/protocol.hpp"
+//修改 增加LCD头文件
+#include <HIMI/lcd.hpp> // XBoard
+
 extern StreamSink* uart4_stream_output_ptr;
 
 extern "C" {

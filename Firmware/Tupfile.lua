@@ -207,14 +207,16 @@ build{
         'communication/interface_i2c.cpp',
         'fibre/cpp/protocol.cpp',
         'FreeRTOS-openocd.c',
-        'autogen/version.c'
+        'autogen/version.c',
+        'HIMI/lcd.cpp'
     },
     includes={
         'Drivers/DRV8301',
         'MotorControl',
         'fibre/cpp/include',
         '.',
-        "doctest"
+        "doctest",
+        'HIMI'
     }
 }
 

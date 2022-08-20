@@ -26,6 +26,9 @@ std::array<Axis*, AXIS_COUNT> axes;
 ODriveCAN *odCAN = nullptr;
 ODrive odrv{};
 
+//修改
+LCD lcd_st7789{};
+
 typedef Config<
     BoardConfig_t,
     ODriveCAN::Config_t,
@@ -167,14 +170,14 @@ extern "C" int construct_objects(){
     HAL_GPIO_Init(GPIO_1_GPIO_Port, &GPIO_InitStruct);
     GPIO_InitStruct.Pin = GPIO_2_Pin;
     HAL_GPIO_Init(GPIO_2_GPIO_Port, &GPIO_InitStruct);
-    GPIO_InitStruct.Pin = GPIO_3_Pin;
-    HAL_GPIO_Init(GPIO_3_GPIO_Port, &GPIO_InitStruct);
-    GPIO_InitStruct.Pin = GPIO_4_Pin;
-    HAL_GPIO_Init(GPIO_4_GPIO_Port, &GPIO_InitStruct);
-#if HW_VERSION_MAJOR == 3 && HW_VERSION_MINOR >= 5
-    GPIO_InitStruct.Pin = GPIO_5_Pin;
-    HAL_GPIO_Init(GPIO_5_GPIO_Port, &GPIO_InitStruct);
-#endif
+    // GPIO_InitStruct.Pin = GPIO_3_Pin;
+    // HAL_GPIO_Init(GPIO_3_GPIO_Port, &GPIO_InitStruct);
+    // GPIO_InitStruct.Pin = GPIO_4_Pin;
+    // HAL_GPIO_Init(GPIO_4_GPIO_Port, &GPIO_InitStruct);
+// #if HW_VERSION_MAJOR == 3 && HW_VERSION_MINOR >= 5
+//     GPIO_InitStruct.Pin = GPIO_5_Pin;
+//     HAL_GPIO_Init(GPIO_5_GPIO_Port, &GPIO_InitStruct);
+// #endif
 
     // Construct all objects.
     odCAN = new ODriveCAN(can_config, &hcan1);
@@ -268,6 +271,8 @@ int odrive_main(void) {
             axis->encoder_.abs_spi_cs_pin_init();
         }
     }
+    // Setup LCD 修改
+    lcd_st7789.Setup();
 
     // Setup motors (DRV8301 SPI transactions here)
     for(auto& axis : axes){

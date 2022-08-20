@@ -92,28 +92,19 @@
 #define GPIO_1_GPIO_Port GPIOA
 #define GPIO_2_Pin GPIO_PIN_1
 #define GPIO_2_GPIO_Port GPIOA
-#define GPIO_3_Pin GPIO_PIN_2
-#define GPIO_3_GPIO_Port GPIOA
-#define GPIO_4_Pin GPIO_PIN_3
-#define GPIO_4_GPIO_Port GPIOA
 #define M1_TEMP_Pin GPIO_PIN_4
 #define M1_TEMP_GPIO_Port GPIOA
-#define AUX_TEMP_Pin GPIO_PIN_5
-#define AUX_TEMP_GPIO_Port GPIOA
 #define VBUS_S_Pin GPIO_PIN_6
 #define VBUS_S_GPIO_Port GPIOA
 #define M1_AL_Pin GPIO_PIN_7
 #define M1_AL_GPIO_Port GPIOA
-#define GPIO_5_Pin GPIO_PIN_4
-#define GPIO_5_GPIO_Port GPIOC
 #define M0_TEMP_Pin GPIO_PIN_5
 #define M0_TEMP_GPIO_Port GPIOC
 #define M1_BL_Pin GPIO_PIN_0
 #define M1_BL_GPIO_Port GPIOB
 #define M1_CL_Pin GPIO_PIN_1
 #define M1_CL_GPIO_Port GPIOB
-#define GPIO_6_Pin GPIO_PIN_2
-#define GPIO_6_GPIO_Port GPIOB
+
 #define AUX_L_Pin GPIO_PIN_10
 #define AUX_L_GPIO_Port GPIOB
 #define AUX_H_Pin GPIO_PIN_11
@@ -140,12 +131,8 @@
 #define M0_BH_GPIO_Port GPIOA
 #define M0_CH_Pin GPIO_PIN_10
 #define M0_CH_GPIO_Port GPIOA
-#define GPIO_7_Pin GPIO_PIN_15
-#define GPIO_7_GPIO_Port GPIOA
 #define nFAULT_Pin GPIO_PIN_2
 #define nFAULT_GPIO_Port GPIOD
-#define GPIO_8_Pin GPIO_PIN_3
-#define GPIO_8_GPIO_Port GPIOB
 #define M0_ENC_A_Pin GPIO_PIN_4
 #define M0_ENC_A_GPIO_Port GPIOB
 #define M0_ENC_B_Pin GPIO_PIN_5
@@ -154,6 +141,47 @@
 #define M1_ENC_A_GPIO_Port GPIOB
 #define M1_ENC_B_Pin GPIO_PIN_7
 #define M1_ENC_B_GPIO_Port GPIOB
+// #define AUX_TEMP_Pin GPIO_PIN_5
+// #define AUX_TEMP_GPIO_Port GPIOA
+// #define GPIO_3_Pin GPIO_PIN_2
+// #define GPIO_3_GPIO_Port GPIOA
+// #define GPIO_4_Pin GPIO_PIN_3
+// #define GPIO_4_GPIO_Port GPIOA
+// #define GPIO_6_Pin GPIO_PIN_2
+// #define GPIO_6_GPIO_Port GPIOB
+// #define GPIO_5_Pin GPIO_PIN_4
+// #define GPIO_5_GPIO_Port GPIOC
+#define GPIO_7_Pin GPIO_PIN_15
+#define GPIO_7_GPIO_Port GPIOA
+#define GPIO_8_Pin GPIO_PIN_3
+#define GPIO_8_GPIO_Port GPIOB
+#define AUX_TEMP_Pin GPIO_PIN_11
+#define AUX_TEMP_GPIO_Port GPIOE
+#define GPIO_3_Pin GPIO_PIN_12
+#define GPIO_3_GPIO_Port GPIOE
+#define GPIO_4_Pin GPIO_PIN_10
+#define GPIO_4_GPIO_Port GPIOE
+#define GPIO_5_Pin GPIO_PIN_14
+#define GPIO_5_GPIO_Port GPIOC
+#define GPIO_6_Pin GPIO_PIN_9
+#define GPIO_6_GPIO_Port GPIOE
+// #define GPIO_7_Pin GPIO_PIN_10
+// #define GPIO_7_GPIO_Port GPIOE
+// #define GPIO_8_Pin GPIO_PIN_13
+// #define GPIO_8_GPIO_Port GPIOE
+
+#define SRC_SDA_Pin GPIO_PIN_2
+#define SRC_SDA_GPIO_Port GPIOA
+#define SRC_SCL_Pin GPIO_PIN_3
+#define SRC_SCL_GPIO_Port GPIOA
+#define SRC_DC_Pin GPIO_PIN_5
+#define SRC_DC_GPIO_Port GPIOA
+#define SRC_RES_Pin GPIO_PIN_4
+#define SRC_RES_GPIO_Port GPIOC
+#define SRC_CS_Pin GPIO_PIN_2
+#define SRC_CS_GPIO_Port GPIOB
+#define SRC_BL_Pin GPIO_PIN_15
+#define SRC_BL_GPIO_Port GPIOE
 
 /* ########################## Assert Selection ############################## */
 /**
@@ -174,7 +202,8 @@
 #if HW_VERSION_VOLTAGE >= 48
 #define VBUS_S_DIVIDER_RATIO 19.0f
 #elif HW_VERSION_VOLTAGE == 24
-#define VBUS_S_DIVIDER_RATIO 11.0f
+// #define VBUS_S_DIVIDER_RATIO 11.0f
+#define VBUS_S_DIVIDER_RATIO 19.0f
 #else
 #error "unknown board voltage"
 #endif

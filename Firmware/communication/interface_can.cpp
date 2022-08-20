@@ -31,6 +31,8 @@ void ODriveCAN::can_server_thread() {
             osSemaphoreWait(sem_can, 10);  // Poll every 10ms regardless of sempahore status
             while (available()) {
                 read(rxmsg);
+                //修改 增加CAN信号标签
+                Can_Flag=1;
                 switch (config_.protocol) {
                     case PROTOCOL_SIMPLE:
                         CANSimple::handle_can_message(rxmsg);

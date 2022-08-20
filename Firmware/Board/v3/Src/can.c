@@ -75,8 +75,8 @@ void MX_CAN1_Init(void)
   hcan1.Init.ReceiveFifoLocked = DISABLE;
   hcan1.Init.TransmitFifoPriority = DISABLE;
   if (HAL_CAN_Init(&hcan1) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
+  { //修改 去掉CAN初始化不成功则进入错误中断
+    // _Error_Handler(__FILE__, __LINE__);
   }
 
 }

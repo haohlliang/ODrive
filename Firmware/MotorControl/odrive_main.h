@@ -156,6 +156,10 @@ struct BoardConfig_t {
 class Axis;
 class Motor;
 class ODriveCAN;
+//修改
+#include <HIMI/lcd.hpp> // XBoard
+class LCD; // XBoard
+extern LCD lcd_st7789;
 
 constexpr size_t AXIS_COUNT = 2;
 extern std::array<Axis*, AXIS_COUNT> axes;

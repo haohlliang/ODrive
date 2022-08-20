@@ -101,13 +101,13 @@ void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PCPin PCPin PCPin */
-  GPIO_InitStruct.Pin = M1_ENC_Z_Pin|GPIO_5_Pin|M0_ENC_Z_Pin;
+  GPIO_InitStruct.Pin = M1_ENC_Z_Pin|M0_ENC_Z_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PBPin PBPin */
-  GPIO_InitStruct.Pin = GPIO_6_Pin|GPIO_8_Pin;
+  GPIO_InitStruct.Pin = GPIO_6_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -130,6 +130,48 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(nFAULT_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PA2*/
+  GPIO_InitStruct.Pin = SRC_SDA_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(SRC_SDA_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PA3*/
+  GPIO_InitStruct.Pin = SRC_SCL_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(SRC_SCL_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PA5*/
+  GPIO_InitStruct.Pin = SRC_DC_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(SRC_DC_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PC4*/
+  GPIO_InitStruct.Pin = SRC_RES_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(SRC_RES_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PB2*/
+  GPIO_InitStruct.Pin = SRC_CS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(SRC_CS_GPIO_Port, &GPIO_InitStruct);
+
+    /*Configure GPIO pins : PEPin*/
+  GPIO_InitStruct.Pin = SRC_BL_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(SRC_BL_GPIO_Port, &GPIO_InitStruct);
 
 }
 

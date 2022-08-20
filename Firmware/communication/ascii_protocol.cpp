@@ -28,7 +28,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 
-static Introspectable root_obj = ODriveTypeInfo<ODrive>::make_introspectable(odrv);
+Introspectable root_obj = ODriveTypeInfo<ODrive>::make_introspectable(odrv);
 
 /* Private function prototypes -----------------------------------------------*/
 /* Function implementations --------------------------------------------------*/
@@ -302,6 +302,8 @@ void ASCII_protocol_parse_stream(const uint8_t* buffer, size_t len, StreamSink& 
         if (is_end_of_line) {
             if (read_active)
                 ASCII_protocol_process_line(parse_buffer, parse_buffer_idx, response_channel);
+            //修改  增加USART标签
+            Usart_Flag =1;
             parse_buffer_idx = 0;
             read_active = true;
         } else {
